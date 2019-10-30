@@ -2,7 +2,7 @@
 A simlple nano service for interfacing with SAP NW RFC
 The services makes use of https://github.com/SAP/gorfc and echo
 
-It encode/decodes JSON from from and to map[string]interface{}
+It encodes/decodes JSON from from and to map[string]interface{}
 
 Currently with no security
 

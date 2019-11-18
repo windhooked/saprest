@@ -21,4 +21,5 @@ CGO_LDFLAGS=-L /home/phiadmin/sap/nwrfcsdk/lib
 ### Usage
 
 curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:8088/rfc/RFC_PING
+
 curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:8088/rfc/STFC_STRUCTURE

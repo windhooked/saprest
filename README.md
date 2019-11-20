@@ -1,6 +1,6 @@
 # SAP REST Gateway Service
 
-A simlple nano service for interfacing with SAP NW RFC
+A simple service for interfacing with SAP NW RFC in REST, REST to SAP RFC Gateway
 The services makes use of https://github.com/SAP/gorfc and echo
 
 It encodes/decodes JSON from from and to map[string]interface{}

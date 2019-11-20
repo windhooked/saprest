@@ -1,0 +1,141 @@
+ curl -X POST -H "Content-Type: application/json" -d '{ "QUERY_TABLE" :"T000" }' http://localhost:8088/rfc/RFC_READ_TABLE
+2019/11/20 10:54:40 main.go:61: RFC_READ_TABLE
+{"time":"2019-11-20T10:54:40.902790067+02:00","id":"RrybGWRa1l8PuXDx4747z3O1L3kzNpfY","remote_ip":"::1","host":"localhost:8088","method":"POST","uri":"/rfc/RFC_READ_TABLE","user_agent":"curl/7.58.0","status":200,"error":"","latency":54294214,"latency_human":"54.294214ms","bytes_in":25,"bytes_out":3482}
+{
+  "DATA": [
+    {
+      "WA": "000SAP AG                   Walldorf                 EUR            S2 X     BASIS       20100501"
+    },
+    {
+      "WA": "001Auslieferungsmandant R11 Kundstadt                USD            C23X     XXX      20120518"
+    },
+    {
+      "WA": "066EarlyWatch               Walldorf                 EUR            S23XX    XXX      20120518"
+    },
+    {
+      "WA": "400 QAS System       Windhoek                 NAD            T        XXX 20190117NP1CLNT400"
+    }
+  ],
+  "FIELDS": [
+    {
+      "FIELDNAME": "MANDT",
+      "FIELDTEXT": "Client",
+      "LENGTH": "000003",
+      "OFFSET": "000000",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "MTEXT",
+      "FIELDTEXT": "Client name",
+      "LENGTH": "000025",
+      "OFFSET": "000003",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "ORT01",
+      "FIELDTEXT": "City",
+      "LENGTH": "000025",
+      "OFFSET": "000028",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "MWAER",
+      "FIELDTEXT": "Standard currency throughout client",
+      "LENGTH": "000005",
+      "OFFSET": "000053",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "ADRNR",
+      "FIELDTEXT": "Character Field Length = 10",
+      "LENGTH": "000010",
+      "OFFSET": "000058",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "CCCATEGORY",
+      "FIELDTEXT": "Client control: Role of client (production, test,...)",
+      "LENGTH": "000001",
+      "OFFSET": "000068",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "CCCORACTIV",
+      "FIELDTEXT": "Changes and transports for client-specific objects",
+      "LENGTH": "000001",
+      "OFFSET": "000069",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "CCNOCLIIND",
+      "FIELDTEXT": "Maintenance authorization for objects in all clients",
+      "LENGTH": "000001",
+      "OFFSET": "000070",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "CCCOPYLOCK",
+      "FIELDTEXT": "Protection reg. client copy program and comparison tools",
+      "LENGTH": "000001",
+      "OFFSET": "000071",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "CCNOCASCAD",
+      "FIELDTEXT": "Client control: No client cascade for upgrade import",
+      "LENGTH": "000001",
+      "OFFSET": "000072",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "CCSOFTLOCK",
+      "FIELDTEXT": "Client control: Soft Lock Required (Planned for 4.0)",
+      "LENGTH": "000001",
+      "OFFSET": "000073",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "CCORIGCONT",
+      "FIELDTEXT": "Recording Client for Switch BC Sets",
+      "LENGTH": "000001",
+      "OFFSET": "000074",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "CCIMAILDIS",
+      "FIELDTEXT": "Client Control: CATT und eCATT Authorization",
+      "LENGTH": "000001",
+      "OFFSET": "000075",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "CCTEMPLOCK",
+      "FIELDTEXT": "Client control: Indicator that client is temporarily locked",
+      "LENGTH": "000001",
+      "OFFSET": "000076",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "CHANGEUSER",
+      "FIELDTEXT": "Last Changed by",
+      "LENGTH": "000012",
+      "OFFSET": "000077",
+      "TYPE": "C"
+    },
+    {
+      "FIELDNAME": "CHANGEDATE",
+      "FIELDTEXT": "Date of Last Change",
+      "LENGTH": "000008",
+      "OFFSET": "000089",
+      "TYPE": "D"
+    },
+    {
+      "FIELDNAME": "LOGSYS",
+      "FIELDTEXT": "Logical system",
+      "LENGTH": "000010",
+      "OFFSET": "000097",
+      "TYPE": "C"
+    }
+  ],
+  "OPTIONS": []
+}

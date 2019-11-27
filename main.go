@@ -3,17 +3,26 @@ package main
 // Hannes de Waal  2019
 
 import (
+	"fmt"
+	"hannesdw/sap/saprest/sap"
 	"log"
 	"net/http"
 
 	"encoding/json"
+
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 )
 
+var rfc *sap.Rfc
+
 func main() {
 
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
+	sap, err := sap.New()
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	server := echo.New()
 	server.Use(
@@ -34,26 +43,28 @@ func main() {
 
 	}
 
-	server.GET("/health", health)
-	server.POST("/rfc/:function", sapRfc)
+	server.GET("/health", healthHandler)
+	server.POST("/rfc/:function", sapRfcHandler)
 
 	log.Fatal(server.Start(":8088"))
 }
 
-func health(c echo.Context) error {
+//healthHandler
+func healthHandler(c echo.Context) error {
 
 	//"STFC_STRUCTURE"
-	params := make(map[string]interface{})
-	r, err := callSAP("RFC_PING", params)
+
+	err := rfc.Conn.Ping()
 
 	if err != nil {
 		return echo.NewHTTPError(401, err)
 	}
 
-	return c.JSON(http.StatusOK, r)
+	return c.JSON(http.StatusOK, "")
 }
 
-func sapRfc(c echo.Context) error {
+//sapRfcHandler
+func sapRfcHandler(c echo.Context) error {
 
 	function := c.Param("function")
 
@@ -65,7 +76,7 @@ func sapRfc(c echo.Context) error {
 	if err != nil {
 		return echo.NewHTTPError(401, err)
 	}
-	r, err := callSAP(function, params)
+	r, err := rfc.Call(function, params)
 
 	if err != nil {
 		return echo.NewHTTPError(401, err)

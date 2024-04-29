@@ -13,7 +13,7 @@
       "WA": "066EarlyWatch               Walldorf                 EUR            S23XX    XXX      20120518"
     },
     {
-      "WA": "400 QAS System       Windhoek                 NAD            T        XXX 20190117NP1CLNT400"
+      "WA": "400 QAS System       Windhoek                 NAD            T        XXX 20190117P01CLNT400"
     }
   ],
   "FIELDS": [
